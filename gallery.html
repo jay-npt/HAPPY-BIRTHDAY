@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="messageContainer"></div>
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+        <button id="giftBtn">Gift</button>
+    </div>
+    <script>
+        const messages = [
+            {
+                text: `Happy Birthday Sunu… Aaj ka din sirf tumhara hai, jaise mera har din sirf tumhare liye hai. Tum mein hi mera sukoon hai, meri muskurahat hai, mera pyaar hai. Har saal, har janam tum meri hi raho — bas yahi dua karta hoon.`,
+                image: "https://i.ibb.co/v4pv9Mtf/IMG-20250509-143550-376.jpg"
+            },
+            {
+                text: `Happy Birthday meri jaan, Kabhi kabhi tum dard deti ho, par us dard mein bhi tumhara naam hota hai. Main toot padta hoon, par phir bhi tum mein hi jeena chahta hoon.`,
+                image: "https://i.ibb.co/Z1fPLwjj/IMG-20250509-102300-546.jpg"
+            },
+            {
+                text: `Janamdin mubarak ho meri sanskari pari, Mujhe na gifts chahiye, na cake, na dikhawa — Bas tumhara vishwas, ek dil jo sirf mera ho.`,
+                image: "https://i.ibb.co/4rpHPkB/IMG-20250509-143553-146.jpg"
+            },
+            {
+                text: `Happy Birthday meri hone wali biwi, Sochta hoon jab tum meri zindagi mein hamesha ke liye aayogi, Toh har din tumhara birthday ban jaayega.`,
+                image: "https://i.ibb.co/pYvpZVr/IMG-20250509-155230-389.jpg"
+            },
+            {
+                text: `Sunu, Kabhi tum galti karti ho, toh main gussa ho jaata hoon. Kabhi lafz tez ho jaate hain… lekin mera pyaar kabhi kam nahi hota.`,
+                image: "https://i.ibb.co/GfZqdBQs/IMG-20250509-155228-578.jpg"
+            },
+            {
+                text: `Tere is khaas din pe ek wada karta hoon — Main tumhe kabhi chhodunga nahi…`,
+                image: "https://i.ibb.co/BV2zpvYP/IMG-20250509-143539-528.jpg"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function showMessage(index) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = `<img src="${messages[index].image}" alt="Message Image"><p>${messages[index].text}</p>`;
+        }
+
+        document.getElementById('prevBtn').onclick = function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : messages.length - 1;
+            showMessage(currentIndex);
+        };
+
+        document.getElementById('nextBtn').onclick = function() {
+            currentIndex = (currentIndex < messages.length - 1) ? currentIndex + 1 : 0;
+            showMessage(currentIndex);
+        };
+
+        document.getElementById('giftBtn').onclick = function() {
+            window.location.href = 'carousel.html';
+        };
+
+        showMessage(currentIndex);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.ibb.co/Wpy0JHRP/IMG-20250527-WA0022.jpg" alt="Birthday Photo">
+        <h1 id="message"></h1>
+        <button id="continueBtn">Continue</button>
+    </div>
+    <script>
+        const message = `Happy Birthday, Sunu!
+
+Shubho jonmo dine onek onek shubhechha. Tumi sara jibon amar sathe thako—ei prothom ebong shesh iccha. Onk happy thako, onek bhalobasha diye tomake rakhibo amar hridoye. Tumi amar shob kichu, aar ami tomake bhalobashi beshi beshi.
+
+I love you, forever and always.`;
+        
+        document.getElementById('message').innerText = message;
+        
+        document.getElementById('continueBtn').onclick = function() {
+            window.location.href = 'gallery.html';
+        };
+    </script>
+</body>
+</html>

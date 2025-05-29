@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Image Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel">
+        <h1 id="carouselTitle">Happy Birthday [UserName]</h1>
+        <div class="carousel-images" id="carouselImages"></div>
+    </div>
+    <script>
+        const images = [
+            "https://i.ibb.co/v4pv9Mtf/IMG-20250509-143550-376.jpg",
+            "https://i.ibb.co/Z1fPLwjj/IMG-20250509-102300-546.jpg",
+            "https://i.ibb.co/4rpHPkB/IMG-20250509-143553-146.jpg",
+            "https://i.ibb.co/pYvpZVr/IMG-20250509-155230-389.jpg",
+            "https://i.ibb.co/GfZqdBQs/IMG-20250509-155228-578.jpg",
+            "https://i.ibb.co/BV2zpvYP/IMG-20250509-143539-528.jpg",
+            "https://i.ibb.co/GfZqdBQs/IMG-20250509-155228-578.jpg",
+            "https://i.ibb.co/fGHSQzks/IMG-20250509-143542-113.jpg",
+            "https://i.ibb.co/KcJSZVpz/IMG-20250509-143535-691.jpg",
+            "https://i.ibb.co/QFPtVpdQ/IMG-20250509-143544-298.jpg"
+        ];
+
+        const userName = localStorage.getItem('userName') || 'User';
+        document.getElementById('carouselTitle').innerText = `Happy Birthday ${userName}`;
+
+        const carouselImages = document.getElementById('carouselImages');
+        images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image;
+            imgElement.alt = "Birthday Image";
+            carouselImages.appendChild(imgElement);
+        });
+    </script>
+</body>
+</html>
